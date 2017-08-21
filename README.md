@@ -8,17 +8,17 @@ Pre-requisites
 - [Node](https://nodejs.org) >= 4
 - [Mocha](https://mochajs.org/) ~
 #### Steps
-    ``` sh
-  $ git clone https://github.com/dennisjade/merchant-galaxy-calculator.git
-  $ cd merchant-galaxy-calculator
-  $ npm install
-  $ node start
-  ```
+```sh
+$ git clone https://github.com/dennisjade/merchant-galaxy-calculator.git
+$ cd merchant-galaxy-calculator
+$ npm install
+$ node start
+```
 
 ### Test
-    ```sh
-  $ npm test
-  ```
+```sh
+$ npm test
+```
 
 ## Module Diagram
 ![Routing](docs/images/router.png "Routes")
