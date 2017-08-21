@@ -2,7 +2,7 @@ var parser = require('../helpers/parser');
 var romanConverter = require('../helpers/roman-numerals');
 
 /**
- * 
+ *
  * @param cacheData
  * @param token
  */
