@@ -15,9 +15,9 @@ function getCacheValue(cacheData, tokens){
   var errorMsg = '';
   var value;
 
-  for (var i = 0; i < tmp.length; i++){
+  for (var i = 0; i < tokens.length; i++){
     if ( !cacheData.tokens[tokens[i].toLowerCase()] ){
-      missingValue = tmp[i];
+      missingValue = tokens[i];
       break;
     }
     romanNumeral += cacheData.tokens[tokens[i].toLowerCase()];
@@ -55,7 +55,7 @@ function computeHowMuch(cacheData, parseQuestion){
   var tmp = _parseQuestion.split(/\s+/);
   var cacheValue = getCacheValue(cacheData, tmp);
 
-  if (cacheValue.error===''){
+  if (cacheValue.error!==''){
     return cacheValue.error;
   } else {
     return cacheValue.value;
@@ -85,7 +85,7 @@ function computeHowMany(cacheData, parseQuestion){
 
   var cacheValue = getCacheValue(cacheData, tmp);
 
-  if (cacheValue.error===''){
+  if (cacheValue.error!==''){
     return cacheValue.error;
   } else{
     return cacheValue.value * cacheData.creditValue[creditMineral.toLowerCase()];

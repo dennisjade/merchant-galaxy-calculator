@@ -25,9 +25,9 @@ function creditFormat(cacheData, token){
   var _token = token[1].trim();
 
   // check if there is no value defined for credit
-  if (_token.length===0){
-    return {error:"Missing value for credits"};
-  }
+  // if (_token.length===0){
+  //   return {error:"Missing value for credits"};
+  // }
 
   var tmp = _token.split(/\s+/);
   var creditMineral = tmp.pop();

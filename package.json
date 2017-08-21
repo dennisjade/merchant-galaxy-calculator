@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./app.js",
-    "dev": "nodemon ./app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/unit"
   },
   "repository": {
     "type": "git",
@@ -25,9 +24,12 @@
     "morgan": "1.7.0",
     "node-cache": "^4.1.1",
     "roman-numerals": "^0.3.2",
-    "underscore": "1.8.3"
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "chai": "^4.1.1",
+    "nodemon": "^1.11.0",
+    "rewire": "^2.5.2",
+    "sinon": "^3.2.1"
   }
 }

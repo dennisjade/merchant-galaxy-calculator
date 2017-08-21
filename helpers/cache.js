@@ -1,5 +1,5 @@
-const NodeCache = require( "node-cache" );
-const myCache = new NodeCache();
+var NodeCache = require( "node-cache" );
+var myCache = new NodeCache();
 var config = require('../config');
 var cacheName = config.cacheName;
 
@@ -37,7 +37,7 @@ function set(inputs){
     myCache.set( cacheName, inputs, function( err, success ){
       if( !err && success ){
         return resolve(inputs);
-      }else{
+      } else {
         return resolve(err);
       }
     });
@@ -55,7 +55,7 @@ function del(){
       if (err) {
         return resolve(err);
       } else {
-        return resolve('Input cleared ');
+        return resolve('Input cleared');
       }
     });
 
@@ -65,6 +65,5 @@ function del(){
 module.exports = {
   set: set,
   get: get,
-  del: del,
-  concatRomanValues:concatRomanValues
+  del: del
 }
