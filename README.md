@@ -22,8 +22,9 @@ $ npm test
 
 ## Module Diagram
 ![Routing](docs/images/router.png "Routes")
-![Compute API](docs/images/compute-api.png "Compute API")
+![Compute API](docs/images/compute-api.png "Compute API")git
 ![Input API](docs/images/input-api.png "Input API")
+![Cache data struc](docs/images/cache-data-sample.png "Cache data struc")
 
 ### APIs
 |Method | Route | Params | Description |
