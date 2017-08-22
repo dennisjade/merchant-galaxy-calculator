@@ -22,7 +22,7 @@ describe('unit - tokenizer - model', function(){
     it('should return a token attribute for a valid input', function(){
       var validValueInput = 'test is I'
       cacheData = tokenizer.tokenize(cacheData, validValueInput)
-      expect(typeof cacheData).to.be.equal('object')
+      expect(typeof cacheData).to.be.an.object
       expect(cacheData.tokens.error).to.be.equal('')
       expect(cacheData.tokens.test).to.be.equal('I');
     })
@@ -34,14 +34,14 @@ describe('unit - tokenizer - model', function(){
         test: 'I'
       }
       cacheData = tokenizer.tokenize(cacheData, validValueInput)
-      expect(typeof cacheData).to.be.equal('object')
+      expect(typeof cacheData).to.be.an.object
       expect(cacheData.creditValue.gold).to.be.above(0);
     })
 
     it('should return an error of some of the token was not previously define', function(){
       var input = 'mocha test gold is 100 credits'
       cacheData = tokenizer.tokenize(cacheData, input)
-      expect(typeof cacheData).to.be.equal('object')
+      expect(typeof cacheData).to.be.an.object
       expect(cacheData.creditValue.error).to.match(/has not been assigned previously/)
     })
 
@@ -52,7 +52,7 @@ describe('unit - tokenizer - model', function(){
         test: 'I'
       }
       cacheData = tokenizer.tokenize(cacheData, input)
-      expect(typeof cacheData).to.be.equal('object')
+      expect(typeof cacheData).to.be.an.object
       expect(cacheData.creditValue.error).to.match(/has been used as a value assignment/)
     })
 
@@ -63,7 +63,7 @@ describe('unit - tokenizer - model', function(){
         test: 'M'
       }
       cacheData = tokenizer.tokenize(cacheData, input)
-      expect(typeof cacheData).to.be.equal('object')
+      expect(typeof cacheData).to.be.an.object
       expect(cacheData.creditValue.error).to.match(/is an invalid roman numeral/)
     })
 

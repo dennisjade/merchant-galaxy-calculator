@@ -17,7 +17,7 @@ describe('unit - calculate - model', function(){
       var invalidQuestion = 'invalid question'
       calculate.compute(cacheData, invalidQuestion)
         .then(function(result){
-          expect(result.error).to.be.equal('Cannot understand your inputs')
+          expect(result).to.be.have.property('error','Cannot understand your inputs')
         })
     })
 

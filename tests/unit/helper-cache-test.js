@@ -1,8 +1,8 @@
-var helpersCache = require('../../helpers/cache');
 var expect = require('chai').expect;
 var _ = require('underscore');
 var rewire = require('rewire');
 var sinon = require('sinon');
+var helpersCache = rewire('../../helpers/cache');
 
 describe('unit - cache - helper', function(){
 
@@ -43,17 +43,18 @@ describe('unit - cache - helper', function(){
     })
 
     it('should return an error when setting token', function(){
-      var helpersCacheMock = rewire('../../helpers/cache');
-      helpersCacheMock.__set__ = ("myCache", {
-          set: sinon.stub().callsFake(function (cacheName, inputs, callback) {
-            callback('error',false);
+      helpersCache.__with__({
+        myCache: {
+          set: sinon.stub().callsFake(function (cacheName, input, callback) {
+            callback({error:'Test error for setting cache'}, false);
           })
-        })
-
-      helpersCacheMock.set('some data')
-        .then(function(result){
-          console.log('result', result);
-        })
+        }
+      })(function(){
+        helpersCache.set('some data')
+          .then(function(result) {
+            expect(result).to.have.property('error','Test error for setting cache')
+          })
+      })
     })
 
   })
@@ -68,20 +69,20 @@ describe('unit - cache - helper', function(){
     })
 
     it('should return an error when deleting cache data', function(){
-      var helpersCacheMock = rewire('../../helpers/cache');
-      helpersCacheMock.__set__ = {
+      helpersCache.__with__({
         myCache: {
-          del: sinon.stub().callsFake(function (cacheName, callback) {
-            callback('error',0);
+          set: sinon.stub().callsFake(function (cacheName, input, callback) {
+            callback({error:'Test error for deleting cache'}, false);
           })
         }
-      }
-
-      helpersCacheMock.del()
-        .then(function(result){
-          console.log('result', result);
-        })
+      })(function(){
+        helpersCache.del()
+          .then(function(result) {
+            expect(result).to.have.property('error','Test error for deleting cache')
+          })
+      })
     })
+
   })
 
 });
