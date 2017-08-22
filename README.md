@@ -29,7 +29,7 @@ Pre-requisites
 $ git clone https://github.com/dennisjade/merchant-galaxy-calculator.git
 $ cd merchant-galaxy-calculator
 $ npm install
-$ node start
+$ npm start
 ```
 
 ### Test
@@ -49,7 +49,7 @@ $ npm test
 |Method | Route | Params | Description |
 |-------|-------|--------|-------------|
 |GET    | /api/input | NONE |Returns the cache data object|
-|POST   | /api/input | input<string> | Add value assignment to the cache obj|
+|POST   | /api/input | input <string> | Add value assignment to the cache obj|
 |DELETE | /api/input | NONE |Clear the cache obj|
-|GET    | /api/compute| question<string>|Computes and returns the value
+|GET    | /api/compute| question <string>|Computes and returns the value
 

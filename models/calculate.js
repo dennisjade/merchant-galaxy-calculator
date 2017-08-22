@@ -48,6 +48,7 @@ function getCacheValue(cacheData, tokens){
  */
 function computeHowMuch(cacheData, parseQuestion){
   var _parseQuestion =  parseQuestion[1].trim();
+
   if (_parseQuestion.length===0){
     return {error: 'Missing value to convert'};
   }
@@ -58,7 +59,8 @@ function computeHowMuch(cacheData, parseQuestion){
   if (cacheValue.error!==''){
     return cacheValue.error;
   } else {
-    return cacheValue.value;
+    var msg = _parseQuestion + ' is ' + cacheValue.value;
+    return msg;
   }
 
 }
@@ -71,6 +73,7 @@ function computeHowMuch(cacheData, parseQuestion){
  */
 function computeHowMany(cacheData, parseQuestion){
   var _parseQuestion =  parseQuestion[1].trim();
+
   if (_parseQuestion.length===0){
     return {error: 'Missing value to convert'};
   }
@@ -88,7 +91,9 @@ function computeHowMany(cacheData, parseQuestion){
   if (cacheValue.error!==''){
     return cacheValue.error;
   } else{
-    return cacheValue.value * cacheData.creditValue[creditMineral.toLowerCase()];
+    var credits = cacheValue.value * cacheData.creditValue[creditMineral.toLowerCase()];
+    var msg = _parseQuestion + ' is ' +  credits + ' Credits'
+    return msg;
   }
 
 }
@@ -108,7 +113,7 @@ function compute(cacheData, question){
     } else if (parseQuestion && parseQuestion.type==="howMany") {
       return resolve(computeHowMany(cacheData, parseQuestion.data));
     } else {
-      return resolve({error: 'Cannot understand your inputs'});
+      return resolve('I have no idea what you are talking about');
     }
 
   });
