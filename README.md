@@ -25,7 +25,7 @@ Pre-requisites
 - [NPM](https://www.npmjs.com/)
 - [Mocha](https://mochajs.org/) ~
 #### Setup
-    ```sh
+```sh
 $ git clone https://github.com/dennisjade/merchant-galaxy-calculator.git
 $ cd merchant-galaxy-calculator
 $ npm install
@@ -33,7 +33,7 @@ $ node start
 ```
 
 ### Test
-    ```sh
+```sh
 $ npm test
 ```
 
@@ -43,7 +43,7 @@ $ npm test
 ![Input API](docs/images/input-api.png "Input API")
 
 ## Sample cache data stored for computation
-    ![Cache data struc](docs/images/cache-data-sample.png "Cache data struc")
+![Cache data struc](docs/images/cache-data-sample.png "Cache data struc")
 
 ### APIs
 |Method | Route | Params | Description |
